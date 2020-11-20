@@ -14,6 +14,7 @@ WITH
 renamed as (
   SELECT
       concat('xero-',banktransactionid) as transaction_id,
+      lineitems.accountcode as bank_transaction_line_item_account_code,
       lineitems.description as transaction_description,
       currencycode as transaction_currency,
       cast(null as numeric) as transaction_exchange_rate,
